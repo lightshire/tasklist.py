@@ -31,7 +31,7 @@ db_host = 'localhost'
 db_port = 27017
 
 #define the database name
-db_name = 'whirlwind'
+db_name = 'todolist_py'
 
 #uncomment the following if when using redis session middleware
 
@@ -50,7 +50,7 @@ db_name = 'whirlwind'
 #memcache_host = 'localhost'
 
 #you must define a cookie secret. you can use the following to generate one:  whirlwind-admin.py --generate-cookie-secret
-cookie_secret = "setthistoyourowncookiesecret"
+cookie_secret = "mvyy0dKdRoSK4kKii1eWEbKCiFroUU9Xrz14sDd5yZA="
 
 #cookie domain (set this in case you need to share cookies cross subdomain)
 #cookie_domain = '.yourdomain.com'

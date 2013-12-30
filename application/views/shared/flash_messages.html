@@ -1,32 +1,34 @@
 # -*- coding: utf-8 -*-
 
 % if flash:
-<div id="flash-message" class="flash-message">
-	<div id="flash-message-list"></div>
+<div class="container">
+	<div id="flash-message" class="flash-message">
+		<div id="flash-message-list"></div>
+	</div>
 </div>
 <script>
-	var message = "<ul id='flash-message-items'>";
+	var message = "<div id='flash-message-items' class='col-md-8 col-md-offset-2'>";
 	% if 'error' in flash:
 		% for message in flash['error']:
-			message += "<li class='error'>${message | h}</li>";
+			message += "<div class='alert alert-danger'><span class='glyphicon glyphicon-exclamation-sign'></span>&nbsp;${message | h}</div>";
 		% endfor
 	% endif
 	% if 'notice' in flash:
 		% for message in flash['notice']:
-			message += "<li class='notice'>${message | h}</li>";
+			message += "<div class='alert alert-warning'><span class='glyphicon glyphicon-warning-sign'></span>&nbsp;${message | h}</div>";
 		% endfor
 	% endif
 	% if 'info' in flash:
 		% for message in flash['info']:
-			message += "<li class='info'>${message | h}</li>";
+			message += "<div class='alert alert-info'><span class='glyphicon glyphicon-comment'></span>&nbsp;${message | h}</div>";
 		% endfor
 	% endif
 	% if 'success' in flash:
 		% for message in flash['success']:
-			message += "<li class='success'>${message | h}</li>";
+			message += "<div class='alert alert-success'><span class='glyphicon glyphicon-ok'></span>&nbsp;${message | h}</div>";
 		% endfor
 	% endif
-	message += "</ul>";
+	message += "</div>";
 	showNotification(message, '', function(){});
 </script>
 % endif

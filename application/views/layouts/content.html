@@ -3,19 +3,14 @@
 
 ### Template for content pages
 <%def name="body()">
-	<%include file="/shared/flash_messages.html"/>
-	<div id="wrap" role="main">
-		<div id="main">
-			<%include file="/shared/header.html"/>
-			<div id="content">
-				<div id="content-inner">
-				<%def name="body_content()">
-					${next.body()}
-				</%def>
-				${body_content()}
-				</div>
-			</div>
-		</div>
+	<%include file="/shared/header.html"/>
+	<div class="body-wrapper">
+		<%include file="/shared/flash_messages.html"/>
+		<%def name="body_content()">
+			${next.body()}
+		</%def>
+		${body_content()}
 	</div>
+	
 	<%include file="/shared/footer.html"/>
 </%def>

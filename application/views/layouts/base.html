@@ -8,7 +8,7 @@
 <!--<![endif]-->
 <head>
 	
-	<%def name="page_title()">whirlwind</%def>
+	<%def name="page_title()">TodoList.Py</%def>
 	<title>
 		${self.page_title()}
 	</title>
@@ -18,10 +18,10 @@
 	<meta name="keywords" content="" />
 	<meta name="description" content="">
 	<meta name="viewport" content="width=device-width">
+	<link rel="shortcut icon" href="/static/images/logo-square.png" />
+	<link rel="stylesheet" href="/static/css/bootstrap.css?${Filters.version()}">
 	
-	<link rel="stylesheet" href="/static/css/reset.css?${Filters.version()}">
-	<link rel="stylesheet" href="/static/css/common.css?${Filters.version()}">
-	<link rel="stylesheet" href="/static/css/layout.css?${Filters.version()}">
+	<link rel="stylesheet" href="/static/css/style.css?${Filters.version()}" />
 	<!--[if lt IE 9]>
 		<script src="http://html5shim.googlecode.com/svn/trunk/html5-els.js"></script>
 	<![endif]-->
@@ -39,9 +39,15 @@
 	${next.body()}
 	${self.scripts()} 
 	<%def name="scripts()"></%def>
-	
+	<script type="text/javascript" src="/static/js/jquery.js"></script>
 	<script>window.jQuery || document.write('<script src="/static/js/jquery-1.7.1.min.js"><\/script>')</script>
-
+	<script type="text/javascript" src="/static/js/bootstrap.js?${Filters.version()}"></script>
+	<script type="text/javascript" src="/static/js/backstretch.js?${Filters.version()}"></script>
+	<script type="text/javascript">
+		$(document).ready(function() {
+			$.backstretch("/static/images/background.jpg");
+		});
+	</script>
 	<script>
 		var _gaq=[['_setAccount','UA-XXXXX-X'],['_trackPageview']];
 		(function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];

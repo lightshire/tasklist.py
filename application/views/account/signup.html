@@ -1,43 +1,37 @@
 # -*- coding: utf-8 -*-
 <%inherit file="/layouts/content.html" />
-
 <%def name="body()">
-<div class="form" style="margin:0 auto 0 auto;width: 250px;">
-	<div class="title">
-		Please Sign-up
+	<div class="container">
+		<div class="col-md-8 col-md-offset-2">
+			<img src="/static/images/logo-white.png" />
+			<div class="panel panel-info">
+				<div class="panel-heading">
+					<div class="panel-title">
+						Please Sign Up
+					</div>
+				</div>
+				<div class="panel-body">
+					<form action="/signup" method="post">
+						<input type="hidden" name="next" value="${next}" />
+						<div class="form-group">
+							<label for="username">Username</label>
+							<input type="text" class="form-control" id="username" name="username" placeholder="Enter your username" />
+						</div>
+						<div class="form-group">
+							<label for="password">Password</label>
+							<input type="password" class="form-control" id="password" name="password" placeholder="Enter your password" />
+						</div>
+						<div class="form-group">
+							<label for="password2">Repeat Password</label>
+							<input type="password" class="form-control" id="password2" name="password2" placeholder="Enter your password again" />
+						</div>
+						<div class="form-group clearfix">
+							<a class="pull-left btn-primary btn">Login W/ Facebook</a>
+							<button class="pull-right btn-info btn" type="Submit">Submit</button>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
 	</div>
-	<form action="/signup" method="post"> 
-		<input type="hidden" name="next" value="${next}" /> 
-		<div class="field">
-			<label for="username" class="label">
-				Username
-			</label>
-			<div class="input">
-				<input type="text" id="username" name="username"/>
-			</div>
-		</div>
-		
-		<div class="field">
-			<label for="password" class="label">
-				Password
-			</label>
-			<div class="input">
-				<input type="password" id="password" name="password"/>
-			</div>
-		</div>
-		
-		<div class="field">
-			<label for="password2" class="label">
-				Confirm Password
-			</label>
-			<div class="input">
-				<input type="password" id="password2" name="password2"/>
-			</div>
-		</div>
-		
-		<div class="buttons">
-			<input type="submit" value="Signup" class="button" />
-		</div>
-	</form>
-</div>
 </%def>
